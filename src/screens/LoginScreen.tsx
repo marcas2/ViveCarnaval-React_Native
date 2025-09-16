@@ -14,7 +14,7 @@ export default function LoginScreen() {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post('http://192.168.20.50:8000/api/login', {
+      const response = await axios.post('http://localhost:8000/api/login', {
         correo,
         contrasena,
       });

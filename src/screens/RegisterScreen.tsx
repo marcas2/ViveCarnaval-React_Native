@@ -15,7 +15,7 @@ export default function RegisterScreen() {
 
   const handleRegister = async () => {
     try {
-      const response = await axios.post('http://192.168.20.50:8000/api/register', {
+      const response = await axios.post('http://localhost:8000/api/register', {
         nombre,
         correo,
         contrasena,
