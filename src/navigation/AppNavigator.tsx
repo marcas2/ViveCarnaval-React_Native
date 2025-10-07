@@ -10,6 +10,7 @@ import RegisterScreen from "../screens/RegisterScreen";
 import HomeScreen from "../screens/HomeScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import EventsScreen from "../screens/EventsScreen";
+import MapsScreen from "../screens/MapsScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -69,6 +70,15 @@ export default function AppNavigator() {
         component={EventsScreen}
         options={{
           title: "Eventos",
+          headerStyle: { backgroundColor: "#7e22ce" },
+          headerTintColor: "#fff",
+        }}
+      />
+      <Stack.Screen
+        name="Maps"
+        component={MapsScreen}
+        options={{
+          title: "Maps",
           headerStyle: { backgroundColor: "#7e22ce" },
           headerTintColor: "#fff",
         }}
