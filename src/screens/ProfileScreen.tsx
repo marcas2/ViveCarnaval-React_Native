@@ -24,7 +24,7 @@ export default function ProfileScreen() {
   const [isLoading, setIsLoading] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
 
-  const API_URL = "http://10.0.2.2:8000/api";
+  const API_URL = "http://10.142.0.7:8000/api";
 
   // ✅ Cargar datos del usuario
   useEffect(() => {

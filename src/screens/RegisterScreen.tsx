@@ -56,7 +56,7 @@ export default function RegisterScreen() {
 
     setIsLoading(true);
     try {
-      const response = await axios.post('http://10.0.2.2:8000/api/register', {
+      const response = await axios.post('http://10.142.0.7:8464/api/register', {
         nombre,
         correo,
         contrasena,

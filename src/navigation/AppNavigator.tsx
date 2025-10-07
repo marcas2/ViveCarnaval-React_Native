@@ -1,19 +1,24 @@
 import React from "react";
+import { TouchableOpacity } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { Ionicons } from "@expo/vector-icons";
+
+import { AuthContext } from "../context/AuthContext"; // ✅ ADD THIS
+
 import LoginScreen from "../screens/LoginScreen";
 import RegisterScreen from "../screens/RegisterScreen";
 import HomeScreen from "../screens/HomeScreen";
 import ProfileScreen from "../screens/ProfileScreen";
-import { TouchableOpacity } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
-import { RootStackParamList } from "../types/navigation";
+import EventsScreen from "../screens/EventsScreen";
 
-const Stack = createNativeStackNavigator<RootStackParamList>();
+const Stack = createNativeStackNavigator();
 
 export default function AppNavigator() {
+  const { token } = React.useContext(AuthContext);
+
   return (
     <Stack.Navigator
-      initialRouteName="Login"
+      initialRouteName={token ? "Home" : "Login"}
       screenOptions={{
         headerStyle: { backgroundColor: "#7e22ce" },
         headerTintColor: "#fff",
@@ -21,6 +26,7 @@ export default function AppNavigator() {
         headerShadowVisible: false,
       }}
     >
+      {/* Screens */}
       <Stack.Screen
         name="Login"
         component={LoginScreen}
@@ -56,6 +62,15 @@ export default function AppNavigator() {
         options={{
           title: "Mi Perfil",
           headerStyle: { backgroundColor: "#ec4899" },
+        }}
+      />
+      <Stack.Screen
+        name="Events"
+        component={EventsScreen}
+        options={{
+          title: "Eventos",
+          headerStyle: { backgroundColor: "#7e22ce" },
+          headerTintColor: "#fff",
         }}
       />
     </Stack.Navigator>
