@@ -301,6 +301,21 @@ export default function HomeScreen() {
           </TouchableOpacity>
         </Animated.View>
 
+        <TouchableOpacity
+            style={styles.primaryButton}
+            onPress={() => navigation.navigate("History")}
+          >
+            <LinearGradient
+              colors={['#7e22ce', '#a855f7']}
+              style={styles.buttonGradient}
+              start={{ x: 0, y: 0 }}
+              end={{ x: 1, y: 0 }}
+            >
+              <Ionicons name="musical-notes" size={22} color="#fff" />
+              <Text style={styles.primaryButtonText}>Ver Historia</Text>
+            </LinearGradient>
+          </TouchableOpacity>
+
         {/* INFO CARDS */}
         <Animated.View 
           style={[
